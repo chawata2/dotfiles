@@ -1,12 +1,13 @@
 # dotfiles
 
+
 ## Zsh
 [Installing ZSH · ohmyzsh/ohmyzsh Wiki](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+
 
 ```sh
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 ```
-
 
 ### sheldon
 [rossmacarthur/sheldon: :bowtie: Fast, configurable, shell plugin manager](https://github.com/rossmacarthur/sheldon#-installation)
@@ -47,3 +48,6 @@ ssh接続して使用する場合、ホストにもインストールすると�
 ```sh
 ln -s $HOME/dotfiles/.config/wezterm/ $HOME/.config/wezterm
 ```
+
+## NeoVim
+comming soon
