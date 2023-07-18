@@ -38,7 +38,7 @@ setopt no_flow_control
 export EDITOR="nvim"
 
 # git-promptの読み込み
-source ~/.zsh/git-prompt.sh
+source ~/dotfiles/zsh.d/git-prompt.sh
 
 # git-completionの読み込み
 fpath=(~/.zsh $fpath)
