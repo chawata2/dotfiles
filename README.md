@@ -53,6 +53,21 @@ ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
 ```
 
 ## NeoVim
+[Installing Neovim · neovim/neovim Wiki](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+インストール例
+
+```sh
+sudo apt install -y curl git ripgrep tar unzip wget build-essential
+
+sudo wget https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64.tar.gz && \
+    tar -zxvf nvim-linux64.tar.gz && \
+    mv nvim-linux64/bin/nvim usr/bin/nvim && \
+    mv nvim-linux64/lib/nvim usr/lib/nvim && \
+    mv nvim-linux64/share/nvim/ usr/share/nvim && \
+    rm -rf nvim-linux64 && \
+    rm nvim-linux64.tar.gz
+```
 
 ```sh
 ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
