@@ -36,26 +36,7 @@ config.inactive_pane_hsb = {
 }
 
 -- tsl
-config.tls_clients = {
-	{
-		-- A handy alias for this session; you will use `wezterm connect server.name`
-		-- to connect to it.
-		name = "foo.bar",
-		-- The host:port for the remote host
-		remote_address = "127.0.0.1:8888",
-		-- The value can be "user@host:port"; it accepts the same syntax as the
-		-- `wezterm ssh` subcommand.
-		bootstrap_via_ssh = "docker-container",
-	},
-}
-
-config.tls_servers = {
-	{
-		-- The host:port combination on which the server will listen
-		-- for connections
-		bind_address = "localhost:8888",
-	},
-}
+-- Todo
 
 -- ショートカットキー設定
 config.keys = {
