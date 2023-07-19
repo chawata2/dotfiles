@@ -15,10 +15,10 @@ config.font = wezterm.font("PlemolJP Console NF")
 config.scrollback_lines = 10000
 
 -- For example, changing the color scheme:
--- config.color_scheme = "Batman"
--- config.color_scheme = "Cobalt2"
-config.color_scheme = "Sakura"
+-- config.color_scheme = "Sakura"
 -- config.color_scheme = "Spacemacs (base16)"
+-- config.color_scheme = "GitHub Dark"
+config.color_scheme = "Kanagawa (Gogh)"
 
 -- 背景透過
 config.window_background_opacity = 0.85
