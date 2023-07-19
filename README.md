@@ -15,7 +15,7 @@ ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 Zshのプラグインマネージャとしてsheldonを使用
 
 ```sh
-ln -s $HOME/dotfiles/.config/sheldon/ $HOME/.config/sheldon
+ln -s $HOME/dotfiles/config/sheldon/ $HOME/.config/sheldon
 ```
 
 ### asdf
@@ -46,7 +46,7 @@ ssh接続して使用する場合、ホストにもインストールすると�
 [多重化 - Wez のターミナル エミュレータ](https://wezfurlong.org/wezterm/multiplexing.html#ssh-domains)
 
 ```sh
-ln -s $HOME/dotfiles/.config/wezterm/ $HOME/.config/wezterm
+ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
 ```
 
 ## NeoVim
