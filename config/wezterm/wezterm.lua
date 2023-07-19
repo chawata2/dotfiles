@@ -42,10 +42,10 @@ config.tls_clients = {
 		-- to connect to it.
 		name = "foo.bar",
 		-- The host:port for the remote host
-		remote_address = "localhost:8888",
+		remote_address = "127.0.0.1:8888",
 		-- The value can be "user@host:port"; it accepts the same syntax as the
 		-- `wezterm ssh` subcommand.
-		bootstrap_via_ssh = "localhost",
+		bootstrap_via_ssh = "docker-container",
 	},
 }
 

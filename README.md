@@ -1,4 +1,7 @@
 # dotfiles
+```sh
+git clone https://github.com/ChappieM/dotfiles.git
+```
 
 
 ## Zsh
