@@ -53,4 +53,7 @@ ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
 ```
 
 ## NeoVim
-comming soon
+
+```sh
+ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
+```
