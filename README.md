@@ -29,14 +29,16 @@ ln -s $HOME/dotfiles/config/sheldon/ $HOME/.config/sheldon
 asdfを使用しない場合、.zshrcの該当箇所をコメントアウト。
 
 ### Welcome
-Zsh起動時にcowsayを使ってなんか表示している。
+Zsh起動時にcowsayを使ってなんか表示する。
+
+
+`cowsay`と`lolcat`が必要。
 
 ```bash
 vmstat | cowsay -n -f dragon | lolcat --force
 ```
 
 不要であれば.zshrcの該当箇所をコメントアウト。
-`cowsay`と`lolcat`が必要
 
 
 ## Wezterm
@@ -80,4 +82,13 @@ ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+## Gitconfig
+`~/.gitconfig`に以下を追記する
+
+
+```
+[include]
+  path = ~/dotfiles/gitconfig.d/.gitconfig.alias
 ```
