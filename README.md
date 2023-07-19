@@ -57,3 +57,12 @@ ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
 ```sh
 ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
 ```
+
+### Packer
+
+[wbthomason/packer.nvim: A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config](https://github.com/wbthomason/packer.nvim)
+
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
