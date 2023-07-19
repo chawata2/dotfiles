@@ -35,6 +35,28 @@ config.inactive_pane_hsb = {
 	brightness = 0.7,
 }
 
+-- tsl
+config.tls_clients = {
+	{
+		-- A handy alias for this session; you will use `wezterm connect server.name`
+		-- to connect to it.
+		name = "foo.bar",
+		-- The host:port for the remote host
+		remote_address = "localhost:8888",
+		-- The value can be "user@host:port"; it accepts the same syntax as the
+		-- `wezterm ssh` subcommand.
+		bootstrap_via_ssh = "localhost",
+	},
+}
+
+config.tls_servers = {
+	{
+		-- The host:port combination on which the server will listen
+		-- for connections
+		bind_address = "localhost:8888",
+	},
+}
+
 -- ショートカットキー設定
 config.keys = {
 	-- Alt(Opt)+Shift+Fでフルスクリーン切り替え
