@@ -24,6 +24,8 @@ ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 Zshのプラグインマネージャとしてsheldonを使用
 
+環境固有の設定は`zsh.d/local.zsh`に記述する。
+
 ```sh
 ln -s $HOME/dotfiles/config/sheldon/ $HOME/.config/sheldon
 ```
@@ -61,6 +63,8 @@ ssh接続して使用する場合、ホストにもインストールする。
 ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
 ```
 
+環境固有の設定は`config/wezterm/local.lua`に記述する。
+
 ## NeoVim
 [Installing Neovim · neovim/neovim Wiki](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
@@ -90,6 +94,8 @@ ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
+
+環境固有の設定は`config/nvim/lua/local/config.lua`に記述する。
 
 ## Gitconfig
 `~/.gitconfig`に以下を追記する
