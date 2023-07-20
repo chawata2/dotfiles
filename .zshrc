@@ -70,17 +70,3 @@ fi
 
 # sheldon
 eval "$(sheldon source)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# asdf
-. "$HOME/.asdf/asdf.sh"
-fpath=($HOME/.asdf/completions $fpath)
-autoload -Uz compinit && compinit
-
-# welcome
-# ToDo:タスクを喋らせたら役に立つかも
-# readonly BAT_COMMANDS=("sudo rm --rf /" "git push -f origin master" )
-# figlet -f Standard "${BAT_COMMANDS[$((1 + $RANDOM % ${#BAT_COMMANDS[@]}))]}" | cowsay -n -f dragon | lolcat --force
-vmstat | cowsay -n -f dragon | lolcat --force
