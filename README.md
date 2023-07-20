@@ -3,6 +3,13 @@
 git clone https://github.com/ChappieM/dotfiles.git
 ```
 
+一時的にgitの追跡から除外するコマンド。
+
+```sh
+cd ~/dotfiles/
+git update-index --assume-unchanged zsh.d/local.zsh
+```
+
 
 ## Zsh
 [Installing ZSH · ohmyzsh/ohmyzsh Wiki](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
@@ -46,7 +53,7 @@ vmstat | cowsay -n -f dragon | lolcat --force
 
 ターミナルエミュレーター。ターミナルマルチプレクサを兼ねている。
 
-ssh接続して使用する場合、ホストにもインストールするといい。
+ssh接続して使用する場合、ホストにもインストールする。
 
 [多重化 - Wez のターミナル エミュレータ](https://wezfurlong.org/wezterm/multiplexing.html#ssh-domains)
 
