@@ -25,7 +25,19 @@ config.inactive_pane_hsb = {
 config.keys = require("keymap")
 
 -- local config
-require("local").apply_local_config(config)
+function file_exists(name)
+	local f = io.open(name, "r")
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
+	end
+end
+
+if file_exists("~/.config/wezterm/local.lua") then
+	require("local").apply_local_config(config)
+end
 
 -- and finally, return the configuration to wezterm
 return config
