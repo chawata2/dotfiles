@@ -12,8 +12,8 @@ vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "x", '"_x', { noremap = true })
 vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { noremap = true })
 
-vim.keymap.set("n", "<leader>h", "^", {noremap =true})
-vim.keymap.set("n", "<leader>l", "$", {noremap =true})
+vim.keymap.set("n", "<leader>h", "^", { noremap = true })
+vim.keymap.set("n", "<leader>l", "$", { noremap = true })
 
 -- dict
 vim.keymap.set("n", "<leader>dc", ":tabnew ~/.config/cspell/cspell.json<CR>")
@@ -37,3 +37,10 @@ vim.keymap.set("n", "<C-l>", ":bnext<CR>", { noremap = true })
 
 --zen
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { noremap = true })
+
+-- terminal mode
+vim.keymap.set("n", "<C-t>", ":terminal<CR>", { noremap = true })
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
+vim.keymap.set("t", "<C-w><C-w>", "<cmd>wincmd w<CR>", { noremap = true })
+
+vim.keymap.set("t", "<C-t>", "<cmd>quit<CR>", { noremap = true })

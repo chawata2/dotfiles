@@ -40,3 +40,13 @@ vim.opt.wrapscan = true
 
 vim.opt.signcolumn = "yes"
 
+-- ターミナルを開いたらインサートモード
+vim.cmd("autocmd TermOpen * :startinsert")
+
+-- ターミナルモードで行番号を非表示
+vim.cmd("autocmd TermOpen * setlocal norelativenumber")
+vim.cmd("autocmd TermOpen * setlocal nonumber")
+
+vim.api.nvim_create_user_command("T", "term", { nargs = 0 })
+vim.api.nvim_create_user_command("VT", "vsplit | wincmd l  | term", { nargs = 0 })
+vim.api.nvim_create_user_command("ST", "split | wincmd j  | term", { nargs = 0 })

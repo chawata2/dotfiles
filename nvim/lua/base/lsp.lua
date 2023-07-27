@@ -67,5 +67,5 @@ vim.keymap.set("n", "ge", "<cmd>Lspsaga show_line_diagnostics<CR>")
 vim.keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 vim.keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 
-vim.keymap.set("n", "<C-t>", "<cmd>Lspsaga term_toggle<CR>")
-vim.keymap.set("t", "<C-t>", "<cmd>Lspsaga term_toggle<CR>")
+-- vim.keymap.set("n", "<C-t>", "<cmd>Lspsaga term_toggle<CR>")
+-- vim.keymap.set("t", "<C-t>", "<cmd>Lspsaga term_toggle<CR>")
