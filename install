@@ -8,6 +8,8 @@ CURRENT_DIR=$(
   pwd
 )
 
+if [ ! -d "$HOME"/.config ]; then
+  mkdir "${HOME}"/.config
 fi
 
 ln -vfsn $HOME/dotfiles/nvim $HOME/.config/
