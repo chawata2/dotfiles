@@ -46,9 +46,9 @@ if [ -f /.dockerenv ]; then
   # utility
   sudo apt-get -y install --no-install-recommends \
     ripgrep \
-    zsh \
-	cowsay \
-	lolcat
+    # zsh \
+	# cowsay \
+	# lolcat
 
   # Neovim
   mkdir -p /tmp/

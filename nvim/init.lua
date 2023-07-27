@@ -24,4 +24,17 @@ end
 --
 -- local固有の設定ファイルを読み込む
 --
-require("local.config")
+local function file_exists(name)
+	local f = io.open(name, "r")
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
+	end
+end
+
+local local_config_file = "local.config"
+if file_exists(local_config_file) then
+	require(local_config_file)
+end
