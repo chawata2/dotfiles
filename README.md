@@ -105,3 +105,11 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 [include]
   path = ~/dotfiles/git/gitconfig.alias
 ```
+
+## open-devcontainer
+[Shane Friedman / open-devcontainer · GitLab](https://gitlab.com/smoores/open-devcontainer#lifecycle-scripts)
+
+
+```sh
+ln -s $HOME/dotfiles/odc.json $HOME/.config/
+```
