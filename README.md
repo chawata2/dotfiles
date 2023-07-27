@@ -27,7 +27,7 @@ Zshのプラグインマネージャとしてsheldonを使用
 環境固有の設定は`zsh.d/local.zsh`に記述する。
 
 ```sh
-ln -s $HOME/dotfiles/config/sheldon/ $HOME/.config/sheldon
+ln -s $HOME/dotfiles/sheldon/ $HOME/.config/sheldon
 ```
 
 ### asdf
@@ -60,7 +60,7 @@ ssh接続して使用する場合、ホストにもインストールする。
 [多重化 - Wez のターミナル エミュレータ](https://wezfurlong.org/wezterm/multiplexing.html#ssh-domains)
 
 ```sh
-ln -s $HOME/dotfiles/config/wezterm/ $HOME/.config/wezterm
+ln -s $HOME/dotfiles/wezterm/ $HOME/.config/wezterm
 ```
 
 環境固有の設定は`config/wezterm/local.lua`に記述する。
@@ -83,7 +83,7 @@ sudo wget https://github.com/neovim/neovim/releases/download/v0.9.1/nvim-linux64
 ```
 
 ```sh
-ln -s $HOME/dotfiles/config/nvim/ $HOME/.config/nvim
+ln -s $HOME/dotfiles/nvim/ $HOME/.config/nvim
 ```
 
 ### Packer
