@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "mkdirp",
+    "tsmerge",
+    "githubusercontent",
+    "streetsidesoftware",
+    "vsmarketplacebadge",
+    "visualstudio",
+    "keymaps",
+    "masson",
+    "mapleader",
+    "keymap",
+    "noremap",
+    "bnext",
+    "bprev",
+    "Neovim",
+    "nvim",
+    "openai",
+    "davinci",
+    "isort ",
+    "autoflake ",
+    "mypy ",
+    "xmeg",
+    "ehon",
+    "wezterm",
+    "alacritty"
+  ],
+  "flagWords": ["hte"]
+}

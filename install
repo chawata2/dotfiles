@@ -8,12 +8,8 @@ CURRENT_DIR=$(
   pwd
 )
 
-if [ ! -d "$HOME"/.config ]; then
-  mkdir "${HOME}"/.config
 fi
 
-# cd ${CURRENT_DIR}
-# git submodule update --init --recursive
 # ln -vfsn "${CURRENT_DIR}/config/nvim" "${HOME}"/.config/nvim
 
 # install dependencies if in container
