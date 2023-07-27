@@ -7,7 +7,7 @@ git clone https://github.com/ChappieM/dotfiles.git
 
 ```sh
 cd ~/dotfiles/
-git update-index --assume-unchanged zsh.d/local.zsh
+git update-index --assume-unchanged zsh/local.zsh
 ```
 
 
@@ -16,7 +16,7 @@ git update-index --assume-unchanged zsh.d/local.zsh
 
 
 ```sh
-ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/zshrc $HOME/.zshrc
 ```
 
 ### sheldon
@@ -24,7 +24,7 @@ ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 Zshのプラグインマネージャとしてsheldonを使用
 
-環境固有の設定は`zsh.d/local.zsh`に記述する。
+環境固有の設定は`zsh/local.zsh`に記述する。
 
 ```sh
 ln -s $HOME/dotfiles/sheldon/ $HOME/.config/sheldon
@@ -103,5 +103,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ```
 [include]
-  path = ~/dotfiles/gitconfig.d/.gitconfig.alias
+  path = ~/dotfiles/git/gitconfig.alias
 ```

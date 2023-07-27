@@ -1,2 +1,4 @@
 zsh.d/local.sh
-config/wezterm/local.lua
+wezterm/local.lua
+
+

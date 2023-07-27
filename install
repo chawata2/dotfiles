@@ -10,7 +10,10 @@ CURRENT_DIR=$(
 
 fi
 
-# ln -vfsn "${CURRENT_DIR}/config/nvim" "${HOME}"/.config/nvim
+ln -vfsn $HOME/dotfiles/nvim $HOME/.config/
+ln -vfsnb $HOME/dotfiles/zshrc $HOME/.zshrc
+ln -vfsn $HOME/dotfiles/sheldon/ $HOME/.config/
+# ln -vfsn $HOME/dotfiles/wezterm/ $HOME/.config/
 
 # install dependencies if in container
 if [ -f /.dockerenv ]; then
@@ -41,7 +44,9 @@ if [ -f /.dockerenv ]; then
   # utility
   sudo apt-get -y install --no-install-recommends \
     ripgrep \
-    fish
+    zsh \
+	cowsay \
+	lolcat
 
   # Neovim
   mkdir -p /tmp/
@@ -54,6 +59,10 @@ if [ -f /.dockerenv ]; then
   # Packer
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+  # Sheldon
+  curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
+	  | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
 
   # cleanup
   sudo rm -rf /var/lib/apt/lists/*

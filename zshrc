@@ -38,11 +38,11 @@ setopt no_flow_control
 export EDITOR="nvim"
 
 # git-promptの読み込み
-source ~/dotfiles/zsh.d/git-prompt.sh
+source ~/dotfiles/zsh/git-prompt.sh
 
 # git-completionの読み込み
 fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+zstyle ':completion:*:*:git:*' script ~/dotfiles/zsh/git-completion.bash
 autoload -Uz compinit && compinit
 
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -55,7 +55,7 @@ setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%
 \$ '
 
 ### split zsh
-ZSHHOME="${HOME}/dotfiles/zsh.d"
+ZSHHOME="${HOME}/dotfiles/zsh"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then
