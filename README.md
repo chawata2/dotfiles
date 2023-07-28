@@ -129,3 +129,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable evremap.service
 sudo systemctl start evremap.service
 ```
+
+## Tmux
+
+```bash
+ln -vfsn $HOME/dotfiles/tmux $HOME/.config/
+```
