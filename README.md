@@ -113,3 +113,19 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 ```sh
 ln -s $HOME/dotfiles/odc.json $HOME/.config/
 ```
+
+## evremap
+
+> A keyboard input remapper for Linux/Wayland systems, written by @wez
+
+[wez/evremap: A keyboard input remapper for Linux/Wayland systems, written by @wez](https://github.com/wez/evremap)
+
+ビルドしてバイナリを`/usr/bin/evremap`に配置する。
+
+```bash
+ln -vfsn $HOME/dotfiles/evremap $HOME/.config/
+sudo cp ~/dotfiles/evremap/evremap.service /usr/lib/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable evremap.service
+sudo systemctl start evremap.service
+```

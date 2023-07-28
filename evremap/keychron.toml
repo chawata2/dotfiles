@@ -1,0 +1,10 @@
+# This config file is the one that @wez uses on a PixelBook Go
+
+device_name = "Keychron K2"
+
+# Hold capslock for ctrl, tap for esc
+[[dual_role]]
+input = "KEY_CAPSLOCK"
+hold = ["KEY_LEFTCTRL"]
+tap = ["KEY_ESC"]
+
