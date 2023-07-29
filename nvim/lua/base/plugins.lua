@@ -4,6 +4,26 @@ require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("ap/vim-buftabline")
+	use("terryma/vim-expand-region")
+	use("terryma/vim-multiple-cursors")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	})
+	use("unblevable/quick-scope")
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup()
+		end,
+	})
 	-- lsp関連
 	use("neovim/nvim-lspconfig")
 	use("nvimdev/lspsaga.nvim")

@@ -7,4 +7,3 @@ device_name = "Keychron K2"
 input = "KEY_CAPSLOCK"
 hold = ["KEY_LEFTCTRL"]
 tap = ["KEY_ESC"]
-

@@ -42,5 +42,14 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { noremap = true })
 vim.keymap.set("n", "<C-t>", ":terminal<CR>", { noremap = true })
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 vim.keymap.set("t", "<C-w><C-w>", "<cmd>wincmd w<CR>", { noremap = true })
-
 vim.keymap.set("t", "<C-t>", "<cmd>quit<CR>", { noremap = true })
+
+-- vim-expand-region
+vim.keymap.set("n", "J", "<Plug>(expand_region_expand)", { noremap = true })
+vim.keymap.set("v", "J", "<Plug>(expand_region_expand)", { noremap = true })
+vim.keymap.set("v", "<leader>j", "<Plug>(expand_region_shrink)", { noremap = true })
+
+-- neo-tree
+vim.keymap.set("n", "<C-b>", "<cmd>Neotree<CR>", { noremap = true })
+
+vim.keymap.set("n", "H", "<cmd>HopWord<CR>", { noremap = true })
