@@ -20,10 +20,25 @@ require("packer").startup(function(use)
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
 		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup()
 		end,
 	})
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
+		end,
+	})
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("indent_blankline").setup({
+				show_end_of_line = true,
+			})
+		end,
+	})
+	use("Vigemus/iron.nvim")
+	use("github/copilot.vim")
 	-- lsp関連
 	use("neovim/nvim-lspconfig")
 	use("nvimdev/lspsaga.nvim")
@@ -63,5 +78,4 @@ require("Comment").setup({})
 require("telescope").load_extension("file_browser")
 require("nvim-autopairs").setup({})
 require("gitsigns").setup()
-
 vim.cmd("colorscheme kanagawa")

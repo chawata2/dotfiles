@@ -8,6 +8,7 @@ require("base.formatter")
 require("base.cmp")
 require("base.snippy")
 require("base.treesitter")
+require("base.iron")
 
 if not vim.g.vscode then
 	-- osc52
