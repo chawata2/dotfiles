@@ -48,6 +48,6 @@ vim.cmd("autocmd TermOpen * setlocal norelativenumber")
 vim.cmd("autocmd TermOpen * setlocal nonumber")
 
 vim.api.nvim_create_user_command("Jterm", "term", { nargs = 0 })
-vim.api.nvim_create_user_command("Jtermvertical", "vsplit | wincmd l  | term", { nargs = 0 })
-vim.api.nvim_create_user_command("Jtermsplit", "split | wincmd j  | term", { nargs = 0 })
+vim.api.nvim_create_user_command("Jtermv", "vsplit | wincmd l  | term", { nargs = 0 })
+vim.api.nvim_create_user_command("Jterms", "split | wincmd j  | term", { nargs = 0 })
 vim.api.nvim_create_user_command("Jrepl", "IronRepl", { nargs = 0 })

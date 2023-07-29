@@ -1,7 +1,7 @@
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-telescope/telescope.nvim")
-	use({ "LinArcX/telescope-command-palette.nvim" })
+	-- use({ "LinArcX/telescope-command-palette.nvim" })
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("ap/vim-buftabline")
