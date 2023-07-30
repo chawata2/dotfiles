@@ -43,6 +43,6 @@ vim.keymap.set("v", "J", "<Plug>(expand_region_expand)", { noremap = true })
 vim.keymap.set("v", "<leader>j", "<Plug>(expand_region_shrink)", { noremap = true })
 
 -- neo-tree
-vim.keymap.set("n", "<C-b>", "<cmd>Neotree<CR>", { noremap = true })
+vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<CR>", { noremap = true })
 
 vim.keymap.set("n", "r", "<cmd>HopWord<CR>", { noremap = true })
