@@ -35,7 +35,7 @@ function file_exists(name)
 	end
 end
 
-if file_exists("~/.config/wezterm/local.lua") then
+if file_exists(os.getenv("HOME") .. "/.config/wezterm/local.lua") then
 	require("local").apply_local_config(config)
 end
 
