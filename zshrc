@@ -51,19 +51,18 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 if [ -n "$SSH_CONNECTION" ]; then
-	setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+	setopt PROMPT_SUBST ; PS1='
+%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 elif [ -e /.dockerenv ]; then
-	setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+	setopt PROMPT_SUBST ; PS1='
+%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 else
-	setopt PROMPT_SUBST ; PS1='%F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+	setopt PROMPT_SUBST ; PS1='
+%F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 fi
-
-# プロンプトの表示設定
-# setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
-# \$ '
 
 ### split zsh
 ZSHHOME="${HOME}/dotfiles/zsh"
