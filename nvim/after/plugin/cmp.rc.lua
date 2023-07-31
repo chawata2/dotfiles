@@ -32,4 +32,3 @@ cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp_cmdline_sources,
 })
-

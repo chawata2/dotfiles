@@ -1,7 +1,7 @@
 local null_ls = require("null-ls")
 
 local cspell = null_ls.builtins.diagnostics.cspell.with({
-	extra_args = { "--config", os.getenv('HOME').."/.config/nvim/cspell.json" },
+	extra_args = { "--config", os.getenv("HOME") .. "/.config/nvim/cspell.json" },
 	diagnostics_postprocess = function(diagnostic)
 		-- レベルをWARNに変更
 		diagnostic.severity = vim.diagnostic.severity["WARN"]
@@ -17,4 +17,3 @@ null_ls.setup({
 		cspell,
 	},
 })
-

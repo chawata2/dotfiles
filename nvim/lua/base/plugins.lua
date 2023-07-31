@@ -3,9 +3,6 @@ require("packer").startup(function(use)
 	use("nvim-telescope/telescope.nvim")
 	use({
 		"nvim-telescope/telescope-frecency.nvim",
-		config = function()
-			require("telescope").load_extension("frecency")
-		end,
 		requires = { "kkharji/sqlite.lua" },
 	})
 	use("nvim-lua/plenary.nvim")
@@ -22,27 +19,8 @@ require("packer").startup(function(use)
 		},
 	})
 	use("unblevable/quick-scope")
-	use({
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
-		config = function()
-			require("hop").setup()
-		end,
-	})
-	use({
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup({})
-		end,
-	})
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("indent_blankline").setup({
-				show_end_of_line = true,
-			})
-		end,
-	})
+	use("folke/which-key.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 	use("Vigemus/iron.nvim")
 	use("github/copilot.vim")
 	-- lsp関連
@@ -80,7 +58,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "PackerCompile",
 })
 
-require("Comment").setup({})
-require("nvim-autopairs").setup({})
-require("gitsigns").setup()
+
 vim.cmd("colorscheme midnight")

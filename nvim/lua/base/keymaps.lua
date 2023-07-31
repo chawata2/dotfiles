@@ -22,7 +22,7 @@ vim.keymap.set("n", "<leader>dc", ":tabnew ~/.config/cspell/cspell.json<CR>")
 
 -- Telescope
 vim.keymap.set("n", "<leader>t", ":Telescope<CR>", { noremap = true })
-vim.keymap.set("n", "<C-p>", ":Telescope frecency<CR>", { noremap = true })
+vim.keymap.set("n", "<C-p>", ":Telescope frecency workspace=CWD<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>g", ":Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>q", ":Telescope quickfix<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>b", ":Telescope buffers<CR>", { noremap = true })
