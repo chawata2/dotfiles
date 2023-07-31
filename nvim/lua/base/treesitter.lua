@@ -22,6 +22,8 @@ require("nvim-treesitter.configs").setup({
 		"htmldjango",
 		"git_config",
 		"git_rebase",
+		"markdown",
+		"markdown_inline",
 	},
 	highlight = {
 		enable = true,

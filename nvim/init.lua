@@ -12,7 +12,7 @@ require("base.iron")
 
 if not vim.g.vscode then
 	-- osc52
-	function copy()
+	local function copy()
 		if vim.v.event.operator == "y" and vim.v.event.regname == "+" then
 			require("osc52").copy_register("+")
 		end

@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 config.scrollback_lines = 10000
-config.color_scheme = "tokyonight"
+-- config.color_scheme = "tokyonight"
 
 -- 背景透過
 -- config.window_background_opacity = 0.85

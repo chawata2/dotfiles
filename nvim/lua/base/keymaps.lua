@@ -14,6 +14,8 @@ vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { noremap = true })
 
 vim.keymap.set("n", "<leader>h", "^", { noremap = true })
 vim.keymap.set("n", "<leader>l", "$", { noremap = true })
+vim.keymap.set("v", "<leader>h", "^", { noremap = true })
+vim.keymap.set("v", "<leader>l", "$", { noremap = true })
 
 -- dict
 vim.keymap.set("n", "<leader>dc", ":tabnew ~/.config/cspell/cspell.json<CR>")
@@ -45,4 +47,4 @@ vim.keymap.set("v", "<leader>j", "<Plug>(expand_region_shrink)", { noremap = tru
 -- neo-tree
 vim.keymap.set("n", "<C-b>", "<cmd>Neotree toggle<CR>", { noremap = true })
 
-vim.keymap.set("n", "r", "<cmd>HopWord<CR>", { noremap = true })
+-- vim.keymap.set("n", "r", "<cmd>HopWord<CR>", { noremap = true })

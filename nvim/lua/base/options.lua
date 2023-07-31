@@ -1,5 +1,6 @@
 -- 行番号
 vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- タブサイズ
 vim.opt.tabstop = 4
