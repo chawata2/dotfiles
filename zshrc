@@ -36,7 +36,6 @@ setopt auto_cd
 setopt no_flow_control
 
 export EDITOR="nvim"
-export TERM=xterm-color256
 
 # git-promptの読み込み
 source ~/dotfiles/zsh/git-prompt.sh

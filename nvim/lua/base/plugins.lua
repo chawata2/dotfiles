@@ -49,7 +49,6 @@ require("packer").startup(function(use)
 	use("ojroques/nvim-osc52")
 	-- ruby
 	use("tpope/vim-endwise")
-	use({ "dasupradyumna/midnight.nvim" })
 end)
 
 -- Packerオートコンパイル
@@ -58,5 +57,4 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "PackerCompile",
 })
 
-
-vim.cmd("colorscheme midnight")
+vim.cmd("colorscheme kanagawa")
