@@ -1,10 +1,6 @@
 require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-telescope/telescope.nvim")
-	use({
-		"nvim-telescope/telescope-frecency.nvim",
-		requires = { "kkharji/sqlite.lua" },
-	})
 	use("nvim-lua/plenary.nvim")
 	use("ap/vim-buftabline")
 	use("terryma/vim-expand-region")
