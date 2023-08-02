@@ -25,8 +25,3 @@ nnoremap gk k
 
 vnoremap > >gv
 vnoremap < <gv
-
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
