@@ -1,8 +1,3 @@
-require("base.options")
-require("base.keymaps")
-require("base.plugins")
-require("base.treesitter")
-
 if not vim.g.vscode then
 	-- osc52
 	local function copy()
@@ -11,6 +6,11 @@ if not vim.g.vscode then
 		end
 	end
 	vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+
+	require("base.options")
+	require("base.keymaps")
+	require("base.plugins")
+	require("base.treesitter")
 else
 	require("base.vscode-settings")
 end

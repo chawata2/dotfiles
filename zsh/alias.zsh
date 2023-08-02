@@ -1,6 +1,5 @@
-alias g='git'
 alias lg='lazygit'
 alias dc='docker compose'
 alias d='docker'
-alias v='nvim'
-alias l='ls -lah --color=auto'
+alias vi='vim'
+alias ls='ls --color=auto'

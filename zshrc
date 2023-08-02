@@ -35,7 +35,7 @@ setopt auto_cd
 # disable ctrl+s, ctrl+q
 setopt no_flow_control
 
-export EDITOR="nvim"
+export EDITOR="vim"
 
 # git-promptの読み込み
 source ~/dotfiles/zsh/git-prompt.sh

@@ -1,15 +1,7 @@
 # dotfiles
 ```sh
-git clone https://github.com/ChappieM/dotfiles.git
+git clone https://github.com/ChappieM/dotfiles.git ~/dotfiles
 ```
-
-一時的にgitの追跡から除外するコマンド。
-
-```sh
-cd ~/dotfiles/
-git update-index --assume-unchanged zsh/local.zsh
-```
-
 
 ## Zsh
 [Installing ZSH · ohmyzsh/ohmyzsh Wiki](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
@@ -37,18 +29,6 @@ ln -s $HOME/dotfiles/sheldon/ $HOME/.config/sheldon
 
 asdfを使用しない場合、.zshrcの該当箇所をコメントアウト。
 
-### Welcome
-Zsh起動時にcowsayを使ってなんか表示する。
-
-
-`cowsay`と`lolcat`が必要。
-
-```bash
-vmstat | cowsay -n -f dragon | lolcat --force
-```
-
-不要であれば.zshrcの該当箇所をコメントアウト。
-
 
 ## Wezterm
 [WezTerm - Wez's Terminal Emulator](https://wezfurlong.org/wezterm/index.html)
@@ -64,6 +44,12 @@ ln -s $HOME/dotfiles/wezterm/ $HOME/.config/wezterm
 ```
 
 環境固有の設定は`config/wezterm/local.lua`に記述する。
+
+## Vim
+
+```sh
+ln -s $HOME/dotfiles/vim/ $HOME/.config/nvim
+```
 
 ## NeoVim
 [Installing Neovim · neovim/neovim Wiki](https://github.com/neovim/neovim/wiki/Installing-Neovim)
@@ -112,22 +98,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ```sh
 ln -s $HOME/dotfiles/odc.json $HOME/.config/
-```
-
-## evremap
-
-> A keyboard input remapper for Linux/Wayland systems, written by @wez
-
-[wez/evremap: A keyboard input remapper for Linux/Wayland systems, written by @wez](https://github.com/wez/evremap)
-
-ビルドしてバイナリを`/usr/bin/evremap`に配置する。
-
-```bash
-ln -vfsn $HOME/dotfiles/evremap $HOME/.config/
-sudo cp ~/dotfiles/evremap/evremap.service /usr/lib/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable evremap.service
-sudo systemctl start evremap.service
 ```
 
 ## Tmux
