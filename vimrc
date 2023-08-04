@@ -1,5 +1,4 @@
 set clipboard=unnamedplus
-set relativenumber
 set laststatus=2
 set showcmd
 set hidden
@@ -7,6 +6,9 @@ set noswapfile
 set fenc=utf-8
 set wildmenu
 syntax on
+" hybrid line number
+set relativenumber
+set nu rnu
 
 set autoindent
 set expandtab
