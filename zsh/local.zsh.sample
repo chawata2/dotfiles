@@ -5,7 +5,3 @@
 # fpath=($HOME/.asdf/completions $fpath)
 # autoload -Uz compinit && compinit
 
-###
-### welcome
-###
-# figlet "on Lubuntu!" | cowsay -n -f dragon | lolcat --force
