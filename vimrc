@@ -21,7 +21,7 @@ set hlsearch
 set incsearch
 
 inoremap jk <Esc>
-noremap x "_x
+" noremap x "_x
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
