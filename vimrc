@@ -20,12 +20,14 @@ set smartcase
 set hlsearch
 set incsearch
 
+let mapleader = "\<Space>"
 inoremap jk <Esc>
-" noremap x "_x
+noremap x "_x
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
+nmap <Esc><Esc> :nohl<CR>
 
 vnoremap > >gv
 vnoremap < <gv
