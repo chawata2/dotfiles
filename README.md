@@ -108,5 +108,5 @@ ln -vfsn $HOME/dotfiles/tmux $HOME/.config/
 
 ## i3-wm
 ```bash
-ln -vfsn $HOME/dotfiles/tmux $HOME/.config/
+ln -vfsn $HOME/dotfiles/i3 $HOME/.config/
 ```
