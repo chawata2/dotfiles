@@ -105,3 +105,8 @@ ln -s $HOME/dotfiles/odc.json $HOME/.config/
 ```bash
 ln -vfsn $HOME/dotfiles/tmux $HOME/.config/
 ```
+
+## i3-wm
+```bash
+ln -vfsn $HOME/dotfiles/tmux $HOME/.config/
+```
