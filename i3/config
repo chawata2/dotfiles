@@ -56,7 +56,7 @@ bindsym $mod+v split h
 
 # ウインドウの分割切り替え
 bindsym $mod+e layout toggle split
-bindsym $mod+x layout toggle tabbed splith
+bindsym $mod+x layout toggle tabbed splith stacking
 
 bindsym $mod+f fullscreen toggle
 
