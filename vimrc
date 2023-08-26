@@ -7,8 +7,8 @@ set fenc=utf-8
 set wildmenu
 syntax on
 " hybrid line number
-set relativenumber
-set nu rnu
+set number
+" set nu rnu
 
 set autoindent
 set expandtab
@@ -28,9 +28,6 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 nmap <Esc><Esc> :nohl<CR>
-
-vnoremap > >gv
-vnoremap < <gv
 
 " Plugin
 let s:jetpackfile = expand('~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim')
