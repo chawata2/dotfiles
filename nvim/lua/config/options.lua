@@ -16,7 +16,7 @@ vim.opt.matchtime = 1
 vim.opt.showtabline = 2 -- タブバーを常に表示
 vim.opt.clipboard:append({ "unnamedplus" }) -- クリップボード連携
 vim.opt.hidden = true -- バッファを保存せずに切り替え可
-vim.opt.path:append({ "**" }) 
+vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
 
 vim.opt.termguicolors = true
