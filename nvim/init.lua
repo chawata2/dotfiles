@@ -42,3 +42,18 @@ require("lazy").setup({
 	}
 })
 
+-- Neovimの背景を透過
+vim.api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    callback = function()
+        vim.cmd('highlight Normal ctermbg=none guibg=none')
+        vim.cmd('highlight NonText ctermbg=none guibg=none')
+        vim.cmd('highlight LineNr ctermbg=none guibg=none')
+        vim.cmd('highlight Folded ctermbg=none guibg=none')
+        vim.cmd('highlight EndOfBuffer ctermbg=none guibg=none')
+    end
+})
+
+-- デフォルトのカラースキームを設定
+vim.cmd('colorscheme default')
+

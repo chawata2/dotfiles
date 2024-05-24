@@ -19,6 +19,10 @@ vim.opt.hidden = true -- バッファを保存せずに切り替え可
 vim.opt.path:append({ "**" }) 
 vim.opt.wildignore:append({ "*/node_modules/*" })
 
+vim.opt.termguicolors = true
+vim.opt.winblend = 0 -- ウィンドウの不透明度
+vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
+
 -- 検索
 vim.opt.ignorecase = true -- 大文字無視
 vim.opt.smartcase = true -- 大文字で検索したら区別をつける
@@ -29,4 +33,18 @@ vim.opt.signcolumn = "yes"
 vim.cmd("autocmd TermOpen * :startinsert") -- ターミナルを開いたらインサートモード
 vim.cmd("autocmd TermOpen * setlocal norelativenumber")
 vim.cmd("autocmd TermOpen * setlocal nonumber")
+
+-- 背景透過
+vim.api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    callback = function()
+        vim.cmd('highlight Normal ctermbg=none guibg=none')
+        vim.cmd('highlight NonText ctermbg=none guibg=none')
+        vim.cmd('highlight LineNr ctermbg=none guibg=none')
+        vim.cmd('highlight Folded ctermbg=none guibg=none')
+        vim.cmd('highlight EndOfBuffer ctermbg=none guibg=none')
+    end
+})
+
+vim.cmd('colorscheme default')
 
