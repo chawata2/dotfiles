@@ -1,6 +1,7 @@
 if not vim.g.vscode then
 	require("config.options")
 	require("config.keymaps")
+	require("config.commands")
 else
 	require("config.vscode-settings")
 end
