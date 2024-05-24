@@ -1,3 +1,3 @@
 return {
-'machakann/vim-sandwich', tag = 'v1.0.0',
+	'machakann/vim-sandwich', tag = 'v1.0.0',
 }
