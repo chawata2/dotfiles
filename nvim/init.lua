@@ -38,7 +38,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		{ import = "plugins" } 
+		{ import = "plugins" }
 	}
 })
 
@@ -54,6 +54,5 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     end
 })
 
--- デフォルトのカラースキームを設定
 vim.cmd('colorscheme default')
 
