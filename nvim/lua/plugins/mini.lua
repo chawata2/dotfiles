@@ -7,5 +7,6 @@ return {
 		require('mini.notify').setup()
 		require('mini.trailspace').setup()
 		require('mini.files').setup()
+		require('mini.completion').setup()
 	end
 }

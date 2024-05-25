@@ -20,8 +20,8 @@ vim.opt.path:append({ "**" })
 vim.opt.wildignore:append({ "*/node_modules/*" })
 
 vim.opt.termguicolors = true
-vim.opt.winblend = 0 -- ウィンドウの不透明度
-vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
+vim.opt.winblend = 20 -- ウィンドウの不透明度
+vim.opt.pumblend = 20 -- ポップアップメニューの不透明度
 
 -- 検索
 vim.opt.ignorecase = true -- 大文字無視
