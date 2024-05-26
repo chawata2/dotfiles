@@ -1,27 +1,28 @@
 return {
 	{
-		'williamboman/mason.nvim', opts ={}
+		'williamboman/mason.nvim', opts = {}
 	},
 	{
 		'neovim/nvim-lspconfig',
 		config = function()
-			require'lspconfig'.lua_ls.setup{
+			require 'lspconfig'.lua_ls.setup {
 				settings = {
 					diagnotics = {
-						globals = { "vim"}
+						globals = { "vim" }
 					}
 				}
 			}
+			require 'lspconfig'.clangd.setup {}
 		end
 
 	},
-{
-	'nvimtools/none-ls.nvim',
-	config = function()
-		local null_ls = require('null-ls')
-		null_ls.setup({
-			null_ls.builtins.formatting.stylua
-		})
-	end
-}
+	{
+		'nvimtools/none-ls.nvim',
+		config = function()
+			local null_ls = require('null-ls')
+			null_ls.setup({
+				null_ls.builtins.formatting.stylua
+			})
+		end
+	}
 }

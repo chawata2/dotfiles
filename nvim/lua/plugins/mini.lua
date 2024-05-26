@@ -1,7 +1,7 @@
 return {
-	'echasnovski/mini.nvim', version = false,
+	'echasnovski/mini.nvim',
+	version = false,
 	config = function()
-		require('mini.animate').setup()
 		require('mini.pairs').setup()
 		require('mini.comment').setup()
 		require('mini.notify').setup()

@@ -6,23 +6,6 @@ else
 	require("config.vscode-settings")
 end
 
--- local固有の設定
-local function file_exists(name)
-	local f = io.open(name, "r")
-	if f ~= nil then
-		io.close(f)
-		return true
-	else
-		return false
-	end
-end
-
-local local_config_file = "local.config"
-if file_exists(local_config_file) then
-	require(local_config_file)
-end
-
-
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -43,16 +26,18 @@ require("lazy").setup({
 	}
 })
 
--- Neovimの背景を透過
-vim.api.nvim_create_autocmd('ColorScheme', {
-	pattern = '*',
-	callback = function()
-		vim.cmd('highlight Normal ctermbg=none guibg=none')
-		vim.cmd('highlight NonText ctermbg=none guibg=none')
-		vim.cmd('highlight LineNr ctermbg=none guibg=none')
-		vim.cmd('highlight Folded ctermbg=none guibg=none')
-		vim.cmd('highlight EndOfBuffer ctermbg=none guibg=none')
+-- local固有の設定
+local function file_exists(name)
+	local f = io.open(name, "r")
+	if f ~= nil then
+		io.close(f)
+		return true
+	else
+		return false
 	end
-})
+end
 
-vim.cmd('colorscheme default')
+local local_config_file = "local.config"
+if file_exists(local_config_file) then
+	require(local_config_file)
+end

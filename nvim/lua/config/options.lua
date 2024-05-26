@@ -34,21 +34,6 @@ vim.cmd("autocmd TermOpen * :startinsert") -- ターミナルを開いたらイ�
 vim.cmd("autocmd TermOpen * setlocal norelativenumber")
 vim.cmd("autocmd TermOpen * setlocal nonumber")
 
--- 背景透過
-vim.api.nvim_create_autocmd('ColorScheme', {
-	pattern = '*',
-	callback = function()
-		vim.cmd('highlight Normal ctermbg=none guibg=none')
-		vim.cmd('highlight NonText ctermbg=none guibg=none')
-		vim.cmd('highlight LineNr ctermbg=none guibg=none')
-		vim.cmd('highlight Folded ctermbg=none guibg=none')
-		vim.cmd('highlight EndOfBuffer ctermbg=none guibg=none')
-	end
-})
-
-vim.cmd('colorscheme default')
-
-
 vim.api.nvim_create_autocmd('BufWritePre', {
 	callback = function()
 		vim.lsp.buf.format {
