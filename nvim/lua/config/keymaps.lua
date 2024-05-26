@@ -19,6 +19,9 @@ keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
 keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols, {})
 keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
 
+-- Vim-maximizer
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle maximize tab
+
 -- Filer
 keymap.set('n', '<C-b>', ":lua MiniFiles.open()<CR>", { noremap = true })
 
