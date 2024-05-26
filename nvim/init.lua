@@ -1,13 +1,3 @@
-vim.g.mapleader = " "
-
-if not vim.g.vscode then
-	require("config.options")
-	require("config.keymaps")
-	require("config.commands")
-else
-	require("config.vscode-settings")
-end
-
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -22,24 +12,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+vim.g.mapleader = " "
+
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" }
+	},
+	change_detection = {
+		enabled = true, -- automatically check for config file changes and reload the ui
+		notify = false, -- turn off notifications whenever plugin changes are made
 	}
 })
 
--- local固有の設定
-local function file_exists(name)
-	local f = io.open(name, "r")
-	if f ~= nil then
-		io.close(f)
-		return true
-	else
-		return false
-	end
-end
-
-local local_config_file = "local.config"
-if file_exists(local_config_file) then
-	require(local_config_file)
-end
+require("config.options")
+require("config.keymaps")
+require("config.commands")

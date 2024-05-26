@@ -1,49 +1,40 @@
-vim.keymap.set("n", "x", '"_x', { noremap = true })
-vim.keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { noremap = true })
+local keymap = vim.keymap
 
-vim.keymap.set("n", "<C-h>", ":bprev<CR>", { noremap = true })
-vim.keymap.set("n", "<C-l>", ":bnext<CR>", { noremap = true })
+-- General keymaps
+keymap.set("n", "x", '"_x', { noremap = true })
+keymap.set("n", "<Esc><Esc>", ":nohlsearch<CR>", { noremap = true })
+keymap.set("n", "<C-h>", ":bprev<CR>", { noremap = true })
+keymap.set("n", "<C-l>", ":bnext<CR>", { noremap = true })
 
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+keymap.set("n", "-", [[<cmd>vertical resize +5<cr>]])
+keymap.set("n", "=", [[<cmd>vertical resize -5<cr>]])
+keymap.set("n", "\\", [[<cmd>horizontal resize +2<cr>]])
+keymap.set("n", "|", [[<cmd>horizontal resize -2<cr>]])
 
-vim.keymap.set('n', '<C-b>', ":lua MiniFiles.open()<CR>", { noremap = true })
+-- Telescope
+keymap.set('n', '<C-p>', require('telescope.builtin').find_files, {})
+keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
+keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
+keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
+keymap.set('n', '<leader>fo', require('telescope.builtin').lsp_document_symbols, {})
+keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {})
 
-vim.keymap.set("n", "-", [[<cmd>vertical resize +5<cr>]])
-vim.keymap.set("n", "=", [[<cmd>vertical resize -5<cr>]])
-vim.keymap.set("n", "\\", [[<cmd>horizontal resize +2<cr>]])
-vim.keymap.set("n", "|", [[<cmd>horizontal resize -2<cr>]])
+-- Filer
+keymap.set('n', '<C-b>', ":lua MiniFiles.open()<CR>", { noremap = true })
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd('LspAttach', {
-	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-		-- Buffer local mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local opts = { buffer = ev.buf }
-		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-		vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-		vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-		vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-		vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-		vim.keymap.set('n', '<space>wl', function()
-			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts)
-		vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-		vim.keymap.set('n', '<space>fm', function()
-			vim.lsp.buf.format { async = true }
-		end, opts)
-	end,
-})
+-- LSP
+keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
+keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+keymap.set('n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+keymap.set('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+keymap.set('n', '<leader>gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+keymap.set('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+keymap.set('n', '<leader>gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+keymap.set('n', '<leader>rr', '<cmd>lua vim.lsp.buf.rename()<CR>')
+keymap.set('n', '<leader>gf', '<cmd>lua vim.lsp.buf.format({async = true})<CR>')
+keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
+keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>')
