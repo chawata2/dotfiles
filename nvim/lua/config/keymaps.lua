@@ -5,10 +5,15 @@ vim.keymap.set("n", "<C-h>", ":bprev<CR>", { noremap = true })
 vim.keymap.set("n", "<C-l>", ":bnext<CR>", { noremap = true })
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+vim.keymap.set('n', '<C-b>', ":lua MiniFiles.open()<CR>", { noremap = true })
+
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 vim.keymap.set("n", "-", [[<cmd>vertical resize +5<cr>]])
 vim.keymap.set("n", "=", [[<cmd>vertical resize -5<cr>]])

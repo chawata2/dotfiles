@@ -1,10 +1,4 @@
-if not vim.g.vscode then
-	require("config.options")
-	require("config.keymaps")
-	require("config.commands")
-else
-	require("config.vscode-settings")
-end
+vim.g.mapleader = " "
 
 -- lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -25,6 +19,14 @@ require("lazy").setup({
 		{ import = "plugins" }
 	}
 })
+
+if not vim.g.vscode then
+	require("config.options")
+	require("config.keymaps")
+	require("config.commands")
+else
+	require("config.vscode-settings")
+end
 
 -- local固有の設定
 local function file_exists(name)
