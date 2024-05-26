@@ -52,3 +52,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     }
   end,
 })
+
+-- 自動フォーマットを無視して保存
+vim.api.nvim_create_user_command('W', 'noautocmd w', {})
