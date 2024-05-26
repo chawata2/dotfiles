@@ -24,16 +24,17 @@ vim.opt.pumblend = 20 -- ポップアップメニューの不透明度
 vim.opt.foldcolumn = '1'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldlevel = 99
--- vim.opt.foldlevelstart = 99
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+vim.opt.signcolumn = 'yes'
+
 
 -- 検索
 vim.opt.ignorecase = true -- 大文字無視
 vim.opt.smartcase = true  -- 大文字で検索したら区別をつける
 vim.opt.wrapscan = true   -- 検索が末尾までいったら先頭から検索
 
-vim.opt.signcolumn = "yes"
 
 vim.cmd("autocmd TermOpen * :startinsert") -- ターミナルを開いたらインサートモード
 vim.cmd("autocmd TermOpen * setlocal norelativenumber")
