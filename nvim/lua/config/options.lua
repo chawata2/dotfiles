@@ -21,6 +21,13 @@ vim.opt.termguicolors = true
 vim.opt.winblend = 20 -- ウィンドウの不透明度
 vim.opt.pumblend = 20 -- ポップアップメニューの不透明度
 
+vim.opt.foldcolumn = '1'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+
 -- 検索
 vim.opt.ignorecase = true -- 大文字無視
 vim.opt.smartcase = true  -- 大文字で検索したら区別をつける

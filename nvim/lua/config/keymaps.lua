@@ -12,9 +12,6 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 vim.keymap.set('n', '<C-b>', ":lua MiniFiles.open()<CR>", { noremap = true })
 
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-
 vim.keymap.set("n", "-", [[<cmd>vertical resize +5<cr>]])
 vim.keymap.set("n", "=", [[<cmd>vertical resize -5<cr>]])
 vim.keymap.set("n", "\\", [[<cmd>horizontal resize +2<cr>]])
