@@ -46,9 +46,9 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 
 vim.api.nvim_create_autocmd('BufWritePre', {
-	callback = function()
-		vim.lsp.buf.format {
-			async = false,
-		}
-	end,
+  callback = function()
+    vim.lsp.buf.format {
+      async = false,
+    }
+  end,
 })
