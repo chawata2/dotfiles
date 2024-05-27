@@ -19,12 +19,12 @@ return {
       -- Install these LSPs automatically
       ensure_installed = {
         'lua_ls',
-        -- 'jsonls', -- requires npm to be installed
+        'jsonls', -- requires npm to be installed
         'lemminx',
         'marksman',
         'quick_lint_js',
         'tsserver', -- requires npm to be installed
-        -- 'yamlls', -- requires npm to be installed
+        'yamlls',   -- requires npm to be installed
       }
     })
 
@@ -35,17 +35,19 @@ return {
     end
 
     -- Call setup on each LSP server
-    require('mason-lspconfig').setup_handlers({
-      function(server_name)
-        lspconfig[server_name].setup({
-          on_attach = lsp_attach,
-          capabilities = lsp_capabilities,
-        })
-      end
-    })
+    -- require('mason-lspconfig').setup_handlers({
+    --   function(server_name)
+    --     lspconfig[server_name].setup({
+    --       on_attach = lsp_attach,
+    --       capabilities = lsp_capabilities,
+    --     })
+    --   end
+    -- })
 
-    -- Lua LSP settings
+    -- Lua
     lspconfig.lua_ls.setup {
+      on_attach = lsp_attach,
+      capabilities = lsp_capabilities,
       settings = {
         Lua = {
           diagnostics = {
@@ -54,6 +56,39 @@ return {
           },
         },
       },
+    }
+
+    -- TypeScript
+    local mason_registry = require('mason-registry')
+    local ts_plugin_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+        '/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin'
+    lspconfig.tsserver.setup {
+      on_attach = lsp_attach,
+      capabilities = lsp_capabilities,
+      init_options = {
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = ts_plugin_path,
+            languages = { "vue" },
+          },
+        },
+      },
+      filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+      },
+    }
+
+    -- Vue
+    lspconfig.volar.setup({
+      capabilities = lsp_capabilities
+    })
+
+    -- HTML, CSS
+    lspconfig.emmet_ls.setup {
+      capabilities = lsp_capabilities
     }
 
     -- Globally configure all LSP floating preview popups (like hover, signature help, etc)

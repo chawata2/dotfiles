@@ -15,7 +15,7 @@ opt.hidden = true   -- バッファを保存せずに切り替え可
 
 -- Line Number
 opt.number = true
-opt.relativenumber = true
+-- opt.relativenumber = true
 
 -- Tabs & Indentation
 opt.tabstop = 2
