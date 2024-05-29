@@ -7,5 +7,9 @@ return {
     require('mini.trailspace').setup()
     require('mini.files').setup()
     require('mini.indentscope').setup()
+
+    local notify = require('mini.notify')
+    notify.setup()
+    vim.notify = notify.make_notify()
   end
 }

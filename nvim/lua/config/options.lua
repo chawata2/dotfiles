@@ -51,7 +51,11 @@ vim.api.nvim_create_autocmd('BufWritePre', {
       async = false,
       filter = function(c)
         local disabled_format_clients = { 'tsserver', 'volar' }
-        return not vim.tbl_contains(disabled_format_clients, c.name)
+        local is_enabled = not vim.tbl_contains(disabled_format_clients, c.name)
+        if is_enabled then
+          vim.notify('Formatted by ' .. c.name, vim.log.levels.INFO)
+        end
+        return is_enabled
       end
     }
   end,

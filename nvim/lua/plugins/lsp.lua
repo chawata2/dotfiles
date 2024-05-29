@@ -8,7 +8,7 @@ return {
     dependencies = {
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
-      { 'j-hui/fidget.nvim',                opts = {} },
+      -- { 'j-hui/fidget.nvim',                opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       -- https://github.com/folke/neodev.nvim
@@ -115,7 +115,7 @@ return {
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.prettier.with({
-            filetypes = { "html", "json", "ts", "js", "vue" }
+            filetypes = { "html", "json", "typescript", "javascript", "vue" }
           })
         }
       })
