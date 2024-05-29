@@ -66,6 +66,7 @@ return {
       lspconfig.tsserver.setup {
         on_attach = lsp_attach,
         capabilities = lsp_capabilities,
+        -- Vue setup
         init_options = {
           plugins = {
             {
@@ -89,6 +90,11 @@ return {
 
       -- HTML, CSS
       lspconfig.emmet_ls.setup {
+        capabilities = lsp_capabilities
+      }
+
+      -- tailwindcss
+      lspconfig.tailwindcss.setup {
         capabilities = lsp_capabilities
       }
 
