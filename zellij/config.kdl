@@ -51,4 +51,4 @@ keybinds clear-defaults=true {
 default_layout "compact"
 simplified_ui true
 pane_frames false
-scrollback_editor "emacsclient -t -a \"\""
+scrollback_editor "vim"
