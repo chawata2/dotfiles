@@ -75,9 +75,4 @@ if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
 fi
 
-alias ls='ls --color=auto'
-alias vi='vim'
-alias lg='lazygit'
-alias dc='docker compose'
-
 eval "$(sheldon source)"
