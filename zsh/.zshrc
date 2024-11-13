@@ -46,18 +46,18 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 setopt PROMPT_SUBST ; PS1='
-%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+%F{34}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 \$ '
 
-# ssh agent自動起動
-if [ -f ~/.ssh-agent ]; then
-    . ~/.ssh-agent
+# ssh-agent
+if [ $(ps aux | grep ssh-agent | grep -v grep | wc -l) -eq 0 ]; then
+    rm -f /tmp/ssh-agent.sock
+    eval $(ssh-agent -a /tmp/ssh-agent.sock) &> /dev/null
+    ssh-add ~/.ssh/id_ed25519  &> /dev/null
+else
+    export SSH_AUTH_SOCK=/tmp/ssh-agent.sock;
+    export SSH_AGENT_PID=$(pidof ssh-agent);
 fi
-if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
-    ssh-agent > ~/.ssh-agent
-    . ~/.ssh-agent
-fi
-ssh-add -l >& /dev/null || ssh-add
 
 export FZF_DEFAULT_OPTS='--height 50% --reverse --border'
 
@@ -71,8 +71,8 @@ zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
 # local settings.
-if [ -f ~/local.zshrc ]; then
-  source ~/local.zshrc
+if [ -f ~/.local.zsh ]; then
+  source ~/.local.zsh
 fi
 
 alias ls='ls --color=auto'
