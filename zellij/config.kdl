@@ -51,4 +51,5 @@ keybinds clear-defaults=true {
 default_layout "compact"
 simplified_ui true
 pane_frames false
-scrollback_editor "vim"
+scrollback_editor "nvim"
+// theme "dracula"
