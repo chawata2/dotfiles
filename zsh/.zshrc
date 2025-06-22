@@ -60,6 +60,10 @@ function fzf-select-history() {
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
 
+# lsに色付け
+export LSCOLORS=gxfxcxdxbxegedabagacad
+alias ls='ls -G'
+
 # local settings.
 if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
