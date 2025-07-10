@@ -89,15 +89,12 @@
 ;; タブ文字や全角空白の可視化
 (setq whitespace-style '(face ; face による可視化を有効化（これがないと *-mark 以外が有効にならない）
                          trailing ; 行末の空白
-                         tabs ; タブ
-                         spaces ; スペース
+                         ;; tabs ; タブ
+                         ;; spaces ; スペース
                          empty ; バッファの前後の空行
-                         space-mark ; 空白文字を置き換え
-                         tab-mark ; タブ文字を置き換え
+                         ;; space-mark ; 空白文字を置き換え
+                         ;; tab-mark ; タブ文字を置き換え
                          ))
-;; (setq whitespace-display-mappings
-;;       '((space-mark ?\x3000 [?\u25a1]) ; 全角空白を「□」で表示
-;;         (tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t]))) ; タブを「»」で表示
 (setq whitespace-action '(auto-cleanup)) ; 自動クリーンアップを有効化
 (global-whitespace-mode 1)  ; 全バッファで有効化
 
@@ -129,3 +126,6 @@
 ;; Normal & Visual モードで C-j / C-k を再マップ
 (map! :nv "C-j" #'+cursor/next-10-line
       :nv "C-k" #'+cursor/prev-10-line)
+
+;; vtermでURLをクリック可能にする
+(add-hook 'vterm-mode-hook #'goto-address-mode)
