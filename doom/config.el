@@ -51,7 +51,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "/org/")
+(setq org-directory "~/org/")
 (setq org-default-notes-file (concat org-directory "/inbox.org"))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -95,9 +95,9 @@
                          space-mark ; 空白文字を置き換え
                          tab-mark ; タブ文字を置き換え
                          ))
-(setq whitespace-display-mappings
-      '((space-mark ?\x3000 [?\u25a1]) ; 全角空白を「□」で表示
-        (tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t]))) ; タブを「»」で表示
+;; (setq whitespace-display-mappings
+;;       '((space-mark ?\x3000 [?\u25a1]) ; 全角空白を「□」で表示
+;;         (tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t]))) ; タブを「»」で表示
 (setq whitespace-action '(auto-cleanup)) ; 自動クリーンアップを有効化
 (global-whitespace-mode 1)  ; 全バッファで有効化
 
