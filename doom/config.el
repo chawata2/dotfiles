@@ -30,9 +30,9 @@
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
 ;; フォント
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
+(setq doom-font (font-spec :family "HackGen Console NF" :size 12))
 ;; 可変幅（Org 見出しなど）も日本語対応したい場合
-(setq doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
+(setq doom-variable-pitch-font (font-spec :family "HackGen Console NF" :size 12))
 ;; シンボルフォント
 (set-fontset-font t 'unicode
                     (font-spec :family "Noto Sans Symbols2") nil 'append)
