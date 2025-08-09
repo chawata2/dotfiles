@@ -30,12 +30,12 @@
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
 
 ;; フォント
-(setq doom-font (font-spec :family "HackGen Console NF" :size 12))
+;; (setq doom-font (font-spec :family "HackGen Console NF" :size 12))
 ;; 可変幅（Org 見出しなど）も日本語対応したい場合
-(setq doom-variable-pitch-font (font-spec :family "HackGen Console NF" :size 12))
+;; (setq doom-variable-pitch-font (font-spec :family "HackGen Console NF" :size 12))
 ;; シンボルフォント
 (set-fontset-font t 'unicode
-                    (font-spec :family "Noto Sans Symbols2") nil 'append)
+                  (font-spec :family "Noto Sans Symbols2") nil 'append)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -129,3 +129,9 @@
 
 ;; vtermでURLをクリック可能にする
 (add-hook 'vterm-mode-hook #'goto-address-mode)
+
+(after! indent-bars
+  ;; 1) indent-bars 側の TS サポートを有効化
+  (setq indent-bars-treesit-support t)
+  ;; 2) Doom が入れる停止フックを外す
+  (remove-hook 'tree-sitter-mode-hook #'+indent-guides--toggle-on-tree-sitter-h))
