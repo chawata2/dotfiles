@@ -38,7 +38,8 @@ config.window_padding = {
 
 -- フォントの設定
 config.font = wezterm.font_with_fallback({
-    { family = 'PlemolJP Console NF', weight = "Medium" },
+    -- { family = 'PlemolJP Console NF', weight = "Medium" },
+    'PlemolJP Console NF',
     "JetBrainsMono Nerd Font",
     "Cica",
 })
@@ -48,8 +49,8 @@ config.font_size = 14
 config.color_scheme = 'OneDark (base16)'
 
 -- 背景透過の設定
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 20
 
 -- タイトルバーを削除
 -- config.window_decorations = "RESIZE"

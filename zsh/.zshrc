@@ -70,3 +70,12 @@ if [ -f ~/.local.zsh ]; then
 fi
 
 eval "$(sheldon source)"
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/cha3/.lmstudio/bin"
+# End of LM Studio CLI section
+
