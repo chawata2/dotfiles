@@ -69,13 +69,17 @@ if [ -f ~/.local.zsh ]; then
   source ~/.local.zsh
 fi
 
-eval "$(sheldon source)"
+eval "$(starship init zsh)"
 
-export WASMTIME_HOME="$HOME/.wasmtime"
+eval "$(mise activate zsh)"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-export PATH="$WASMTIME_HOME/bin:$PATH"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/chiwata/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/chiwata/google-cloud-sdk/path.zsh.inc'; fi
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/cha3/.lmstudio/bin"
-# End of LM Studio CLI section
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/chiwata/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chiwata/google-cloud-sdk/completion.zsh.inc'; fi
 
+alias lg='lazygit'
+
+. "$HOME/.local/bin/env"
