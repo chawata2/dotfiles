@@ -46,18 +46,12 @@ config.font = wezterm.font_with_fallback({
 
 -- フォントサイズの設定
 config.font_size = 14
-config.color_scheme = 'OneDark (base16)'
+-- config.color_scheme = 'Github (base16)'
+config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- 背景透過の設定
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 20
-
--- タイトルバーを削除
--- config.window_decorations = "RESIZE"
-
--- タブバーの設定
--- config.tab_bar_at_bottom = true
--- config.use_fancy_tab_bar = false
 
 -- 区切り文字
 config.selection_word_boundary = " \t\n{}[]()\"'`~!=:;,.<>/?\\|"
@@ -71,7 +65,7 @@ config.leader = {
 config.keys = {
     -- quick select
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "f",
         action = wezterm.action.QuickSelect,
     },
