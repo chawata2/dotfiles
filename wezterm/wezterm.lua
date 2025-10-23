@@ -38,8 +38,7 @@ config.window_padding = {
 
 -- フォントの設定
 config.font = wezterm.font_with_fallback({
-    -- { family = 'PlemolJP Console NF', weight = "Medium" },
-    'PlemolJP Console NF',
+    'Moralerspace Xenon',
     "JetBrainsMono Nerd Font",
     "Cica",
 })
@@ -50,7 +49,7 @@ config.font_size = 14
 config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- 背景透過の設定
--- config.window_background_opacity = 0.95
+config.window_background_opacity = 0.95
 -- config.macos_window_background_blur = 20
 
 -- 区切り文字
