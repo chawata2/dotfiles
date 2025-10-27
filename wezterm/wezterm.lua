@@ -47,6 +47,7 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 14
 -- config.color_scheme = 'Github (base16)'
 config.color_scheme = 'Everforest Dark (Gogh)'
+-- config.color_scheme = 'iceberg-light'
 
 -- 背景透過の設定
 config.window_background_opacity = 0.95
@@ -84,27 +85,27 @@ config.keys = {
         action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
     },
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "l",
         action = wezterm.action.ActivatePaneDirection("Right"),
     },
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "h",
         action = wezterm.action.ActivatePaneDirection("Left"),
     },
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "j",
         action = wezterm.action.ActivatePaneDirection("Down"),
     },
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "k",
         action = wezterm.action.ActivatePaneDirection("Up"),
     },
     {
-        mods = "LEADER",
+        mods = "ALT",
         key = "z",
         action = wezterm.action.TogglePaneZoomState,
     },
@@ -115,24 +116,14 @@ config.keys = {
     },
     -- Move to the next tab
     {
-        mods = "LEADER",
-        key = "n",
-        action = wezterm.action.ActivateTabRelative(1),
-    },
-    {
         mods = "ALT",
-        key = "l",
+        key = "n",
         action = wezterm.action.ActivateTabRelative(1),
     },
     -- Move to the previous tab
     {
-        mods = "LEADER",
-        key = "p",
-        action = wezterm.action.ActivateTabRelative(-1),
-    },
-    {
         mods = "ALT",
-        key = "h",
+        key = "p",
         action = wezterm.action.ActivateTabRelative(-1),
     },
     -- Move to a specified tab ID
