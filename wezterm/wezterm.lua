@@ -23,7 +23,6 @@ wezterm.on('format-tab-title', function(tab)
         end
         title = path ~= '' and path or proc
     end
-
     return { { Text = ' ' .. (title or '') .. ' ' } }
 end)
 
@@ -194,5 +193,6 @@ config.key_tables = {
         { key = "Escape",     action = "PopKeyTable" },
     },
 }
+
 
 return config
