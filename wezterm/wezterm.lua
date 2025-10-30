@@ -43,7 +43,7 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- フォントサイズの設定
-config.font_size = 14
+config.font_size = 13
 -- config.color_scheme = 'Github (base16)'
 config.color_scheme = 'Everforest Dark (Gogh)'
 -- config.color_scheme = 'iceberg-light'
