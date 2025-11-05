@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
--- タブのタイトルをカスタマイズする
+-- -- タブのタイトルをカスタマイズする
 local function basename(s)
 	return s:gsub("^.+[/\\]", "")
 end
@@ -43,14 +43,12 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- フォントサイズの設定
-config.font_size = 13
--- config.color_scheme = 'Github (base16)'
+config.font_size = 12
 config.color_scheme = "Everforest Dark (Gogh)"
--- config.color_scheme = 'iceberg-light'
 
 -- 背景透過の設定
--- config.window_background_opacity = 0.95
--- config.macos_window_background_blur = 20
+config.window_background_opacity = 0.90
+config.macos_window_background_blur = 25
 
 -- 区切り文字
 config.selection_word_boundary = " \t\n{}[]()\"'`~!=:;,.<>/?\\|"
@@ -60,6 +58,8 @@ config.leader = {
 	mods = "CTRL",
 	timeout_milliseconds = 2000,
 }
+
+config.use_fancy_tab_bar = false
 
 config.keys = {
 	-- quick select
@@ -112,6 +112,11 @@ config.keys = {
 		mods = "LEADER",
 		key = "c",
 		action = wezterm.action.SpawnTab("DefaultDomain"),
+	},
+	{
+		mods = "LEADER",
+		key = "q",
+		action = wezterm.action.CloseCurrentTab({ confirm = true }),
 	},
 	-- Move to the next tab
 	{
