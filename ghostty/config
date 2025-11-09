@@ -1,0 +1,17 @@
+font-size=13
+theme = nordfox
+copy-on-select = clipboard
+macos-titlebar-proxy-icon=hidden
+macos-titlebar-style = hidden
+
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
+quick-terminal-position = "top"
+quick-terminal-screen = "main"
+quick-terminal-animation-duration = 0.1
+keybind = "global:alt+space=toggle_quick_terminal"
+
+keybind = cmd+shift+j=write_scrollback_file:open
+
