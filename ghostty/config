@@ -1,4 +1,5 @@
-font-size=13
+font-family="Moralerspace Xenon"
+font-size=12
 theme = nordfox
 copy-on-select = clipboard
 macos-titlebar-proxy-icon=hidden
