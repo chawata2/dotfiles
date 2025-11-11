@@ -47,7 +47,7 @@ config.font_size = 12
 config.color_scheme = "Everforest Dark (Gogh)"
 
 -- 背景透過の設定
--- config.window_background_opacity = 0.90
+config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 25
 
 -- 区切り文字
@@ -59,7 +59,8 @@ config.leader = {
 	timeout_milliseconds = 2000,
 }
 
-config.use_fancy_tab_bar = false
+-- config.use_fancy_tab_bar = false
+config.window_decorations = "RESIZE"
 
 config.keys = {
 	-- quick select
