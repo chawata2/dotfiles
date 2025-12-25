@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
--- -- タブのタイトルをカスタマイズする
+-- タブのタイトルをカスタマイズする
 local function basename(s)
 	return s:gsub("^.+[/\\]", "")
 end
@@ -26,6 +26,20 @@ wezterm.on("format-tab-title", function(tab)
 	return { { Text = " " .. (title or "") .. " " } }
 end)
 
+-- ステータスバーの更新イベント
+wezterm.on("update-status", function(window, pane)
+	-- 現在のワークスペース名を取得
+	local stat = window:active_workspace()
+
+	-- 右側に表示する文字列を設定
+	window:set_right_status(wezterm.format({
+		{ Foreground = { AnsiColor = "Green" } },
+		{ Text = "  " }, -- アイコン（任意）
+		{ Foreground = { AnsiColor = "White" } },
+		{ Text = "Workspace: " .. stat .. "  " },
+	}))
+end)
+
 -- 以下設定
 
 local config = wezterm.config_builder()
@@ -47,7 +61,7 @@ config.font_size = 12
 config.color_scheme = "Everforest Dark (Gogh)"
 
 -- 背景透過の設定
-config.window_background_opacity = 0.90
+-- config.window_background_opacity = 0.90
 -- config.macos_window_background_blur = 25
 
 -- 区切り文字
@@ -60,7 +74,7 @@ config.leader = {
 }
 
 -- config.use_fancy_tab_bar = false
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 
 config.keys = {
 	-- quick select
@@ -157,16 +171,36 @@ config.keys = {
 		key = "5",
 		action = wezterm.action.ActivateTab(4),
 	},
+	-- ¥でバックスラッシュ
 	{
-		-- ¥でバックスラッシュ
 		key = "¥",
 		action = wezterm.action.SendKey({ key = "\\" }),
 	},
+	-- ALT + ¥で¥
 	{
-		-- ALT + ¥で¥
 		key = "¥",
 		mods = "ALT",
 		action = wezterm.action.SendKey({ key = "¥" }),
+	},
+	-- ワークスペースを作成・切り替え
+	{
+		mods = "LEADER",
+		key = "s",
+		action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES", title = "Select workspace" }),
+	},
+	-- ワークスペースのリネーム
+	{
+		-- Rename workspace
+		mods = "LEADER",
+		key = "$",
+		action = wezterm.action.PromptInputLine({
+			description = "(wezterm) Set workspace title:",
+			action = wezterm.action_callback(function(win, pane, line)
+				if line then
+					wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+				end
+			end),
+		}),
 	},
 }
 
