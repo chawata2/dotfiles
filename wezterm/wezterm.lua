@@ -58,11 +58,12 @@ config.font = wezterm.font_with_fallback({
 
 -- フォントサイズの設定
 config.font_size = 12
-config.color_scheme = "Everforest Dark (Gogh)"
+-- config.color_scheme = "Everforest Dark (Gogh)"
+config.colors = require("cyberdream")
 
 -- 背景透過の設定
--- config.window_background_opacity = 0.90
--- config.macos_window_background_blur = 25
+config.window_background_opacity = 0.90
+config.macos_window_background_blur = 25
 
 -- 区切り文字
 config.selection_word_boundary = " \t\n{}[]()\"'`~!=:;,.<>/?\\|"
@@ -80,7 +81,7 @@ config.keys = {
 	-- quick select
 	{
 		mods = "ALT",
-		key = "f",
+		key = "c",
 		action = wezterm.action.QuickSelect,
 	},
 	{
