@@ -78,6 +78,12 @@ config.leader = {
 -- config.window_decorations = "RESIZE"
 
 config.keys = {
+	-- Cmd+n で新しいタブを開く
+	{
+		mods = "CMD",
+		key = "n",
+		action = wezterm.action.SpawnTab("DefaultDomain"),
+	},
 	-- quick select
 	{
 		mods = "ALT",
