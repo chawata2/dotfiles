@@ -1,48 +1,12 @@
 local wezterm = require("wezterm")
 
--- タブのタイトルをカスタマイズする
-local function basename(s)
-	return s:gsub("^.+[/\\]", "")
-end
-
-wezterm.on("format-tab-title", function(tab)
-	local pane = tab.active_pane
-	local proc = basename(pane.foreground_process_name or "")
-	local title = proc
-
-	if proc == "" or proc == "zsh" or proc == "bash" or proc == "fish" then
-		-- シェルのときはカレントディレクトリ名を表示
-		local cwd = pane.current_working_dir
-		local path = ""
-		if cwd then
-			-- file://host/path → /path に
-			path = (cwd.file_path or tostring(cwd)):gsub("^file://[^/]*", "")
-			-- 末尾のディレクトリ名だけ
-			path = path:gsub("/+$", "")
-			path = path:match("([^/]+)$") or path
-		end
-		title = path ~= "" and path or proc
-	end
-	return { { Text = " " .. (title or "") .. " " } }
-end)
-
--- ステータスバーの更新イベント
-wezterm.on("update-status", function(window, pane)
-	-- 現在のワークスペース名を取得
-	local stat = window:active_workspace()
-
-	-- 右側に表示する文字列を設定
-	window:set_right_status(wezterm.format({
-		{ Foreground = { AnsiColor = "Green" } },
-		{ Text = "  " }, -- アイコン（任意）
-		{ Foreground = { AnsiColor = "White" } },
-		{ Text = "Workspace: " .. stat .. "  " },
-	}))
-end)
-
--- 以下設定
-
 local config = wezterm.config_builder()
+
+-- タブが一つしかない時はタブバーを非表示
+config.hide_tab_bar_if_only_one_tab = true
+
+-- タイトルバーを非表示
+config.window_decorations = "RESIZE"
 
 config.window_padding = {
 	top = 0,
@@ -58,12 +22,19 @@ config.font = wezterm.font_with_fallback({
 
 -- フォントサイズの設定
 config.font_size = 12
-config.color_scheme = "Everforest Dark (Gogh)"
--- config.colors = require("cyberdream")
+
+local c_schema = "Everforest Dark (Gogh)"
+local scheme = wezterm.color.get_builtin_schemes()[c_schema]
+config.color_scheme = c_schema
+
+config.window_frame = {
+	active_titlebar_bg = scheme.background,
+	inactive_titlebar_bg = scheme.background,
+}
 
 -- 背景透過の設定
 -- config.window_background_opacity = 0.90
--- config.macos_window_background_blur = 25
+-- config.macos_window_background_blur = 5
 
 -- 区切り文字
 config.selection_word_boundary = " \t\n{}[]()\"'`~!=:;,.<>/?\\|"
@@ -73,9 +44,6 @@ config.leader = {
 	mods = "CTRL",
 	timeout_milliseconds = 2000,
 }
-
--- config.use_fancy_tab_bar = false
--- config.window_decorations = "RESIZE"
 
 config.keys = {
 	-- Cmd+n で新しいタブを開く
