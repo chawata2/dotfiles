@@ -159,8 +159,9 @@ config.keys = {
 	},
 	-- ワークスペースを作成・切り替え
 	{
-		mods = "LEADER",
-		key = "s",
+		key = "p",
+		mods = "CTRL|SHIFT",
+		-- action = wezterm.action.SwitchWorkspaceRelative(-1)
 		action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES", title = "Select workspace" }),
 	},
 	-- ワークスペースのリネーム
