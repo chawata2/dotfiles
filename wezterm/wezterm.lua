@@ -3,13 +3,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- タブが一つしかない時はタブバーを非表示
-config.hide_tab_bar_if_only_one_tab = true
+-- config.hide_tab_bar_if_only_one_tab = true
 
 -- タイトルバーを非表示
 config.window_decorations = "RESIZE"
 
 config.window_padding = {
-	top = 0,
+	top = 4,
 	bottom = 0,
 }
 
@@ -157,10 +157,13 @@ config.keys = {
 		mods = "ALT",
 		action = wezterm.action.SendKey({ key = "¥" }),
 	},
+	-- タブ並び替え
+	{ key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
+	{ key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
 	-- ワークスペースを作成・切り替え
 	{
 		key = "p",
-		mods = "CTRL|SHIFT",
+		mods = "CMD",
 		-- action = wezterm.action.SwitchWorkspaceRelative(-1)
 		action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES", title = "Select workspace" }),
 	},
@@ -178,6 +181,8 @@ config.keys = {
 			end),
 		}),
 	},
+	{ key = "n", mods = "CTRL", action = wezterm.action.SwitchWorkspaceRelative(1) },
+	{ key = "p", mods = "CTRL", action = wezterm.action.SwitchWorkspaceRelative(-1) },
 }
 
 -- ペインをリサイズするモード
@@ -209,5 +214,17 @@ config.key_tables = {
 		{ key = "Escape", action = "PopKeyTable" },
 	},
 }
+
+-- ワークスペース名をタブバー右側に表示
+wezterm.on("update-status", function(window, pane)
+	local workspace = window:active_workspace()
+	window:set_right_status(wezterm.format({
+		{ Foreground = { Color = scheme.ansi[3] } }, -- green
+		{ Background = { Color = scheme.background } },
+		{ Attribute = { Italic = true } },
+		{ Text = "  " .. workspace .. "  " },
+		"ResetAttributes",
+	}))
+end)
 
 return config
